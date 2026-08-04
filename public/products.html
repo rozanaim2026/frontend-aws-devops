@@ -47,7 +47,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 <!-- HERO SECTION -->
 
 <section id="heroSection" class="products-hero"
-style="background-image:url('https://cdn.rozana-projects.online/Product_Hero.jpg')">
+style="background-image:url('assets/Product_Hero.jpg')">
 
 <div class="hero-arrow-left" onclick="goHome()">
 <i class="fa-solid fa-arrow-left"></i>
@@ -68,22 +68,22 @@ View My Collections
 <div class="collections-grid">
 
 <div class="collection-card" onclick="openCollection('women')">
-<img id="womenImg" src="https://cdn.rozana-projects.online/women/Women.jpg">
+<img id="womenImg" src="assets/women/Women.jpg">
 <p>Women</p>
 </div>
 
 <div class="collection-card" onclick="openCollection('men')">
-<img id="menImg" src="https://cdn.rozana-projects.online/men/Men.jpg">
+<img id="menImg" src="assets/men/Men.jpg">
 <p>Men</p>
 </div>
 
 <div class="collection-card" onclick="openCollection('jewellery')">
-<img id="jewelleryImg" src="https://cdn.rozana-projects.online/jewellery/J.jpg">
+<img id="jewelleryImg" src="assets/jewellery/J.jpg">
 <p>Jewellery</p>
 </div>
 
 <div class="collection-card" onclick="openCollection('bags')">
-<img id="bagsImg" src="https://cdn.rozana-projects.online/bags/Bags.jpg">
+<img id="bagsImg" src="assets/bags/Bags.jpg">
 <p>Bags</p>
 </div>
 
@@ -93,6 +93,7 @@ View My Collections
 
 <!-- JS FILES -->
 
+<script src="config.js"></script>
 <script src="../src/navbar.js"></script>
 <script src="../src/app.js"></script>
 
@@ -100,7 +101,7 @@ View My Collections
 
 /* CDN BASE */
 
-const CDN = "https://cdn.rozana-projects.online";
+const CDN = "assets";
 
 /* HERO IMAGE */
 

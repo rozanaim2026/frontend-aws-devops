@@ -1,4 +1,3 @@
-const API = "https://api.rozana-projects.online";
 
 /* ===============================
 LOAD WISHLIST
@@ -38,8 +37,8 @@ try {
     html += `
       <div class="wishlist-card">
 
-        <img src="${product.image_url || 'https://cdn.rozana-projects.online/placeholder.png'}"
-        onerror="this.src='https://cdn.rozana-projects.online/placeholder.png'">
+        <img src="${product.image_url || 'assets/placeholder.png'}"
+        onerror="this.src='assets/placeholder.png'">
 
         <h3>${product.name}</h3>
 

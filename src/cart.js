@@ -44,7 +44,7 @@ container.innerHTML += `
 <div class="cart-item">
 
 <div class="cart-image">
-<img src="${item.image}" alt="${item.name}" onerror="this.src='https://cdn.rozana-projects.online/placeholder.png'">
+<img src="${item.image}" alt="${item.name}" onerror="this.src='assets/placeholder.png'">
 </div>
 
 <div class="cart-details">

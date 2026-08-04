@@ -88,7 +88,7 @@ transform:translateY(0);
 
 .hero-banner{
 height:91.5vh;
-background-image:url("https://cdn.rozana-projects.online/heroimage.jpg");
+background-image:url("assets/heroimage.jpg");
 background-size:cover;
 background-position:center;
 position:relative;

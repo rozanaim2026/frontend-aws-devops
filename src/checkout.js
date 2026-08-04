@@ -1,4 +1,3 @@
-const API = "https://api.rozana-projects.online";
 
 let isPlacingOrder = false;
 let isPaymentStarted = false;

@@ -19,14 +19,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 </section>
 
 <!-- LOAD NAVBAR -->
+<script src="config.js"></script>
 <script src="src/navbar.js"></script>
 
 <!-- APP FUNCTIONS -->
 <script src="src/app.js"></script>
 
 <script>
-
-const API = "https://api.rozana-projects.online";
 
 /* ================= SAFE FETCH ================= */
 async function safeFetch(url, options = {}) {
@@ -114,9 +113,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       <div class="order-preview">
 
         <img 
-          src="${order.image_url || 'https://cdn.rozana-projects.online/placeholder.png'}"
+          src="${order.image_url || 'assets/placeholder.png'}"
           class="order-img"
-          onerror="this.src='https://cdn.rozana-projects.online/placeholder.png'"
+          onerror="this.src='assets/placeholder.png'"
         >
 
         <div class="order-info">
