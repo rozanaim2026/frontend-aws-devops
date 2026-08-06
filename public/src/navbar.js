@@ -135,10 +135,23 @@ if (document.referrer && document.referrer.includes(window.location.origin)) {
     if(loginBtn) loginBtn.style.display = "none";
     if(logoutBtn) logoutBtn.style.display = "block";
 
+    // ===== ADMIN DASHBOARD LINK =====
+    if(user.role === "admin" && logoutBtn && !document.getElementById("adminDashLink")){
+      const adminLink = document.createElement("a");
+      adminLink.id = "adminDashLink";
+      adminLink.href = "admin.html";
+      adminLink.innerText = "Admin Dashboard";
+      adminLink.style.display = "block";
+      logoutBtn.parentNode.insertBefore(adminLink, logoutBtn);
+    }
+
   } else {
 
     if(loginBtn) loginBtn.style.display = "block";
     if(logoutBtn) logoutBtn.style.display = "none";
+
+    const existingAdminLink = document.getElementById("adminDashLink");
+    if(existingAdminLink) existingAdminLink.remove();
   }
 
   /* ===== LOGOUT ===== */
