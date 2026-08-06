@@ -49,7 +49,7 @@ fetch("components/navbar.html")
 let allProducts = [];
 
 /* ================= FETCH ALL PRODUCTS (once) ================= */
-apiRequest(`${API}/products/`)
+apiRequest(`${PRODUCT_API}/products/`)
   .then(data => {
     if (!Array.isArray(data)) {
       console.error("Invalid data:", data);

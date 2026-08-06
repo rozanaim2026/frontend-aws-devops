@@ -99,7 +99,7 @@ function getProductData() {
 LOAD PRODUCT (PUBLIC → KEEP FETCH)
 ================================ */
 
-fetch(`${API}/products/${id}`)
+fetch(`${PRODUCT_API}/products/${id}`)
 .then(res => res.json())
 .then(product => {
 

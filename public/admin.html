@@ -247,7 +247,7 @@ async function updateOrder(){
 async function loadProducts(){
 
   // 🔥 IMPORTANT FIX
-  const data = await safeFetch(`${API}/products/`);
+  const data = await safeFetch(`${PRODUCT_API}/products/`);
 
   if (!data) {
     responseBox.innerHTML = "❌ Failed to load products";
@@ -268,7 +268,7 @@ async function addProduct(){
     category: pcategory.value
   };
 
-  const res = await safeFetch(`${API}/products/`, {
+  const res = await safeFetch(`${PRODUCT_API}/products/`, {
     method:"POST",
     body: JSON.stringify(product)
   });
@@ -283,7 +283,7 @@ async function loadHealth(){
   const services = [
     { name:"User Service", url:`${API}/health` },
     { name:"Order Service", url:`${API}/orders/health` },
-    { name:"Product Service", url:`${API}/products/health` },
+    { name:"Product Service", url:`${PRODUCT_API}/products/health` },
     { name:"Payment Service", url:`${API}/payments/health` }
   ];
 

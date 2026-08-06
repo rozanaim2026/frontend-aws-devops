@@ -62,7 +62,7 @@ if(!category){
 
   /* ================= FETCH PRODUCTS ================= */
 
-  apiRequest(`${API}/products/category/${category}`)
+  apiRequest(`${PRODUCT_API}/products/category/${category}`)
     .then(data => {
 
       console.log("PRODUCT DATA:", data); // 🔥 debug

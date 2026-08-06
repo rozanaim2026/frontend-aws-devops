@@ -25,7 +25,7 @@ let html = "";
 try {
 
   const requests = list.map(id => 
-    apiRequest(`${API}/products/${Number(id)}`)
+    apiRequest(`${PRODUCT_API}/products/${Number(id)}`)
   );
 
   const products = await Promise.all(requests);
@@ -102,7 +102,7 @@ async function addToCartFromWishlist(id){
 
   try{
 
-    let product = await apiRequest(`${API}/products/${id}`);
+    let product = await apiRequest(`${PRODUCT_API}/products/${id}`);
 
     if(!product || product.error){
       alert("Failed to load product");
