@@ -45,11 +45,11 @@ function loadCheckout() {
 /* ================= LOAD ADDRESSES ================= */
 
 async function loadAddresses() {
-  let addresses = await apiRequest(`${API}/users/addresses`);
+  let addresses = await apiRequest(`${USER_API}/users/addresses`);
 
 if (!addresses) {
   console.log("Retrying address fetch...");
-  addresses = await apiRequest(`${API}/users/addresses`);
+  addresses = await apiRequest(`${USER_API}/users/addresses`);
 }
 
   const selectedBox = document.getElementById("selectedAddressBox");
@@ -180,7 +180,7 @@ function openRazorpay(order, orderId) {
 
     handler: async function (response) {
 
-      const verifyRes = await apiRequest(`${API}/payments/verify`, {
+      const verifyRes = await apiRequest(`${PAYMENT_API}/payments/verify`, {
   method: "POST",
   body: JSON.stringify({
     orderId,
@@ -276,7 +276,7 @@ if (selected) {
     return;
   }
 
-  await apiRequest(`${API}/users/addresses`, {
+  await apiRequest(`${USER_API}/users/addresses`, {
     method: "POST",
     body: JSON.stringify(address)
   });
@@ -308,7 +308,7 @@ const totalAmount = cart.reduce((s, i) => s + i.price * i.quantity, 0);
 
 console.log("🚀 Sending order:", { items, totalAmount, address });
 
-const orderRes = await apiRequest(`${API}/orders/create`, {
+const orderRes = await apiRequest(`${ORDER_API}/orders/create`, {
   method: "POST",
   body: JSON.stringify({ items, totalAmount, address })
 });
@@ -332,7 +332,7 @@ if (!methodEl) {
 
 const method = methodEl.value;
 
-const payment = await apiRequest(`${API}/payments/create`, {
+const payment = await apiRequest(`${PAYMENT_API}/payments/create`, {
   method: "POST",
   body: JSON.stringify({
     orderId,
@@ -389,7 +389,7 @@ if (payment.gateway === "razorpay") {
 async function deleteAddress(id) {
   if (!confirm("Delete this address?")) return;
 
-  const res = await apiRequest(`${API}/users/addresses/${id}`, { 
+  const res = await apiRequest(`${USER_API}/users/addresses/${id}`, { 
     method: "DELETE"
   });
 
