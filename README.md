@@ -2,6 +2,7 @@
 
 # 🛍️ LUCCI Frontend
 
+----
 ### Frontend Application for the LUCCI Cloud Native E-Commerce Platform
 <br/>
 
@@ -10,7 +11,9 @@
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![AWS](https://img.shields.io/badge/Cloud-AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/)
+[![Amazon S3](https://img.shields.io/badge/Amazon%20S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white)](https://aws.amazon.com/s3/)
+[![CloudFront](https://img.shields.io/badge/CloudFront-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/cloudfront/)
+[![Route53](https://img.shields.io/badge/Route53-8C4FFF?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/route53/)
 [![Jenkins](https://img.shields.io/badge/CI%2FCD-Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white)](https://www.jenkins.io/)
 
 
@@ -28,7 +31,25 @@
 </div>
 
 ----
+# 📑 Table of Contents
 
+- [Overview](#overview)
+- [Frontend Responsibilities](#frontend-responsibilities)
+- [Project Repositories](#project-repositories)
+- [Architecture](#architecture)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [AWS Infrastructure](#aws-infrastructure)
+- [CI/CD Pipeline](#cicd-pipeline)
+- [Frontend Repository Structure](#frontend-repository-structure)
+- [Frontend Deployment Flow](#frontend-deployment-flow)
+- [Application Screenshots](#application-screenshots)
+- [Future Improvements](#future-improvements)
+- [Getting Started](#getting-started)
+- [Author](#author)
+
+----
+<a id="overview"></a>
 # 🔍 Overview
 
 This repository contains the customer-facing frontend application for the LUCCI Cloud Native E-Commerce Platform.
@@ -46,6 +67,7 @@ The complete LUCCI platform consists of:
 - Payment Service
 ----
 
+<a id="frontend-responsibilities"></a>
 # 🌐 Frontend Responsibilities
 
 The frontend application is responsible for:
@@ -60,49 +82,48 @@ The frontend application is responsible for:
 
 ----
 
+<a id="project-repositories"></a>
 # 📦 Project Repositories
 
 | Repository | Description |
 |------------|-------------|
-| [Frontend](https://github.com/rozanaim2026/frontend-aws-devops) | Customer-facing web application |
-| [User Service](https://github.com/rozanaim2026/user-service) | Authentication & User Management |
-| [Product Service](https://github.com/rozanaim2026/product-service) | Product Catalog |
-| [Order Service](https://github.com/rozanaim2026/order-service) | Order Processing |
-| [Payment Service](https://github.com/rozanaim2026/payment-service) | Razorpay Integration |
+| **[Frontend](https://github.com/rozanaim2026/frontend-aws-devops)** *(Current Repository)* | Customer-facing web application |
+| **[User Service](https://github.com/rozanaim2026/user-service)** | Authentication & User Management |
+| **[Product Service](https://github.com/rozanaim2026/product-service)** | Product Catalog |
+| **[Order Service](https://github.com/rozanaim2026/order-service)** | Order Processing |
+| **[Payment Service](https://github.com/rozanaim2026/payment-service)** | Razorpay Integration |
+
 ----
 
-<div align="center">
-  
+<a id="architecture"></a>
 # 🏗️ Architecture
 
-  
-  <p align="center">
+<p align="center">
   <img src="./assets/lucci-architecture.png" width="90%">
 </p>
-
-</div>
+----
 
 ### Architecture Flow
 
 ```
 Users
- │
+   │
+Route53
+   │
 CloudFront
- │
+   │
 Amazon S3
- │
+   │
 Frontend
- │
+   │
 REST API Requests
- ▼
+   ▼
 Application Load Balancer
- │
+   │
 Backend Microservices
 ```
 
 ---
-
-### Request Flow
 
 ### Request Flow
 
@@ -116,9 +137,12 @@ Backend Microservices
 ---
 
 
+<a id="features"></a>
 ## ✨ Features
 
+
 - Responsive HTML5, CSS3 & JavaScript Frontend
+- Responsive Design
 - Product Browsing
 - Product Categories
 - Product Details
@@ -131,6 +155,7 @@ Backend Microservices
 - Cloud-Native Deployment
 
 ----
+<a id="tech-stack"></a>
 # 🛠️ Tech Stack
 
 | Category | Technology | Purpose |
@@ -146,6 +171,7 @@ Backend Microservices
 | Version Control | Git & GitHub | Source Code Management |
 ---
 
+<a id="aws-infrastructure"></a>
 # ☁️ AWS Infrastructure
 
 The application is deployed using a secure AWS architecture that separates public-facing resources from backend services running inside a private network.
@@ -162,6 +188,7 @@ The application is deployed using a secure AWS architecture that separates publi
 ---
 
 
+<a id="cicd-pipeline"></a>
 # 🚀 CI/CD Pipeline
 
 The frontend deployment is fully automated using **Jenkins**, **Amazon S3**, and **Amazon CloudFront**.
@@ -169,25 +196,23 @@ The frontend deployment is fully automated using **Jenkins**, **Amazon S3**, and
 ```
 Developer
      │
- Git Push
+Git Push
      ▼
 GitHub Repository
      │
-  Webhook
+Webhook
      ▼
 Jenkins Pipeline
      │
-Checkout Source Code
-     ▼
 Run build.sh
      ▼
-Generate Production Build
+Deploy Build to Amazon S3
+     │
+Invalidate Frontend CloudFront
+     │
+Invalidate Images CloudFront
      ▼
-Sync Build Files to Amazon S3
-     ▼
-Invalidate CloudFront Distribution
-     ▼
-Users Receive Updated Website
+Updated Website Available
 ```
 
 ---
@@ -205,6 +230,7 @@ Users Receive Updated Website
 
 
 
+<a id="frontend-repository-structure"></a>
 # 📁 Frontend Repository Structure
 
 | Folder / File | Description |
@@ -230,8 +256,10 @@ Users Receive Updated Website
 | `Jenkinsfile` | CI/CD pipeline |
 | `package.json` | Project dependencies |
 
+---
+<a id="frontend-deployment-flow"></a>
+# 🚀 Frontend Deployment Flow
 
-# Deployment 
 ```
 Developer
       │
@@ -258,7 +286,9 @@ Route53
 Users
 ```
 ----
+<a id="application-screenshots"></a>
 # 📸 Application Screenshots
+
 
 <p align="center">
   <img src="assets/HomePage.png" width="48%">
@@ -281,6 +311,7 @@ Users
 
 ---
 
+<a id="future-improvements"></a>
 # 📈 Future Improvements
 
 - Progressive Web App (PWA)
@@ -294,10 +325,45 @@ Users
 
 
 ---
+<a id="getting-started"></a>
+# 🚀 Getting Started
 
+## Clone the Repository
+
+```bash
+git clone https://github.com/rozanaim2026/frontend-aws-devops.git
+
+cd frontend-aws-devops
+```
+
+---
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Start the Development Server
+
+```bash
+npm start
+```
+
+The application will be available at:
+
+```text
+http://localhost:3000
+```
+
+---
+
+<a id="author"></a>
 # 👩‍💻 Author
 
-<div align="center">
+<p align="center">
 
 ## Rozana IM
 
@@ -307,7 +373,7 @@ GitHub: https://github.com/rozanaim2026
 
 LinkedIn: https://www.linkedin.com/in/rozana-im-a63541302/
 
-</div>
+</p>
 
 ---
 
@@ -323,7 +389,7 @@ It really helps and motivates me to build more cloud-native projects.
 
 <div align="center">
 
-## ☁️ Built with HTML5 • CSS3 • JavaScript • AWS • Jenkins
+## ☁️ Built with HTML5 • CSS3 • JavaScript • Amazon S3 • CloudFront • Jenkins
 
 ### ❤️ Part of the LUCCI Cloud Native E-Commerce Platform
 </div>
