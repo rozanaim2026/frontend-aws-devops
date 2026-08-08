@@ -423,9 +423,9 @@ cd frontend-aws-devops
 
 Cloud Engineer • DevOps Engineer • AWS Enthusiast
 
-GitHub: https://github.com/rozana09
+GitHub: https://github.com/rozanaim2026
 
-LinkedIn: https://linkedin.com/in/<your-profile>
+LinkedIn: https://www.linkedin.com/in/rozana-im-a63541302/
 
 </div>
 
