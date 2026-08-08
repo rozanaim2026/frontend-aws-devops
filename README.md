@@ -27,6 +27,24 @@
 </div>
 
 ----
+
+<div align="center">
+
+# 🛍️ LUCCI Frontend
+
+This repository contains the frontend application for the LUCCI Cloud Native E-Commerce Platform.
+
+The complete project consists of five independently deployed repositories:
+
+- Frontend
+- User Service
+- Product Service
+- Order Service
+- Payment Service
+
+  ----
+
+  
 # 🔍 Overview
 
 LUCCI is a **production-style cloud-native e-commerce platform** designed using a **microservices architecture** and deployed entirely on **Amazon Web Services (AWS)**.
