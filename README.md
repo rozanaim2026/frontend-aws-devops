@@ -1,7 +1,7 @@
 <h2 align="center">☁️ LUCCI — Cloud Native E-Commerce Platform on AWS</h2>
 
 <p align="center">
-  <img src="./assets/LUCCI%20Architecture%20diagram.png" width="90%">
+  <img src="./assets/lucci-architecture.png" width="90%">
 </p>
 
 <br/>
