@@ -43,7 +43,7 @@ The complete project consists of five independently deployed repositories:
 - Payment Service
 
   ----
-
+</div>
   
 # 🔍 Overview
 
