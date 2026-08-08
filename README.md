@@ -101,6 +101,7 @@ The frontend application is responsible for:
 <p align="center">
   <img src="./assets/lucci-architecture.png" width="90%">
 </p>
+
 ----
 
 ### Architecture Flow
