@@ -1278,7 +1278,7 @@ MOBILE RESPONSIVE
   width:100%;
   max-width:400px;
   padding:16px;
-  margin-top:20px;
+  margin:30px auto 0 auto;
   background:#1e2a38;
   color:white;
   border:none;
@@ -1287,6 +1287,7 @@ MOBILE RESPONSIVE
   font-weight:600;
   cursor:pointer;
   transition:.2s;
+  text-align:center;
 }
 
 .checkout-btn:hover{
