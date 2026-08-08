@@ -51,7 +51,7 @@ async function loadOrderDetails() {
     return;
   }
 
-  const data = await apiRequest(`${API}/orders/${orderId}`);
+  const data = await apiRequest(`${ORDER_API}/orders/${orderId}`);
 
   console.log("📦 Order details:", data);
 
