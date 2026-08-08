@@ -24,9 +24,50 @@
 > Frontend delivered through **Amazon S3 + CloudFront + Route 53**  
 > Event-driven communication using **Amazon SQS**
 
+</div>
+
+----
+# 🔍 Overview
+
+LUCCI is a **production-style cloud-native e-commerce platform** designed using a **microservices architecture** and deployed entirely on **Amazon Web Services (AWS)**.
+
+Instead of deploying a single monolithic application, LUCCI separates business functionality into multiple independent services that communicate securely while running inside **Amazon ECS Fargate**.
+
+The project demonstrates real-world cloud engineering concepts including:
+
+- Containerized microservices using Docker
+- Automated CI/CD with Jenkins
+- Image management using Amazon ECR
+- Secure networking with Amazon VPC
+- Public & Private Subnets
+- Application Load Balancer
+- Amazon RDS MySQL
+- Amazon SQS asynchronous messaging
+- HTTPS using AWS Certificate Manager
+- Frontend hosting using Amazon S3
+- Global content delivery using CloudFront
+- DNS management using Route 53
+
+----
+
+# 📦 Project Repositories
+
+| Repository | Description |
+|------------|-------------|
+| **https://github.com/rozanaim2026/frontend-aws-devops.git** | React Application |
+| **https://github.com/rozanaim2026/user-service.git** | User Authentication & Profile |
+| **https://github.com/rozanaim2026/product-service.git** | Product Catalog |
+| **https://github.com/rozanaim2026/order-service.git** | Order Management |
+| **https://github.com/rozanaim2026/payment-service.git** | Razorpay Integration |
+
+----
+
+<div align="center">
+  
 # 🏗️ Architecture
 
-<p align="center">
+  
+  <p align="center">
   <img src="./assets/lucci-architecture.png" width="90%">
 </p>
 
@@ -106,39 +147,287 @@ Application Load Balancer
 
 ---
 
+
+## ✨ Features
+
+- Responsive React Frontend
+- Product Browsing
+- Category Filtering
+- Shopping Cart
+- Secure Checkout
+- Razorpay Payment Integration
+- Order Management
+- User Authentication
+- Cloud-native Deployment
+- Dockerized Microservices
+
+----
+# 🛠️ Tech Stack
+
+| Category | Technology | Purpose |
+|-----------|------------|---------|
+| **Frontend** | React.js | User Interface |
+| **Backend** | Node.js + Express.js | REST APIs |
+| **Database** | MySQL | Persistent Storage |
+| **Containerization** | Docker | Package Microservices |
+| **Container Registry** | Amazon ECR | Store Docker Images |
+| **Container Orchestration** | Amazon ECS Fargate | Run Containers |
+| **CI/CD** | Jenkins | Automated Build & Deployment |
+| **Cloud Storage** | Amazon S3 | React Frontend Hosting |
+| **Content Delivery** | Amazon CloudFront | CDN |
+| **DNS** | Amazon Route 53 | Domain Management |
+| **SSL** | AWS Certificate Manager | HTTPS Certificates |
+| **Messaging** | Amazon SQS | Event-driven Communication |
+| **Payments** | Razorpay | Payment Gateway |
+| **Version Control** | Git & GitHub | Source Code Management |
+
 ---
-# 🔍 Overview
 
-LUCCI is a **production-style cloud-native e-commerce platform** designed using a **microservices architecture** and deployed entirely on **Amazon Web Services (AWS)**.
+# ☁️ AWS Infrastructure
 
-Instead of deploying a single monolithic application, LUCCI separates business functionality into multiple independent services that communicate securely while running inside **Amazon ECS Fargate**.
+The application is deployed using a secure AWS architecture that separates public-facing resources from backend services running inside a private network.
 
-The project demonstrates real-world cloud engineering concepts including:
+| AWS Service | Purpose |
+|--------------|---------|
+| **Amazon VPC** | Isolated network for the application |
+| **Public Subnet** | Hosts the Application Load Balancer |
+| **Private Subnet** | Hosts ECS Fargate Tasks & Amazon RDS |
+| **Internet Gateway** | Allows public internet access |
+| **NAT Gateway** | Outbound internet for private resources |
+| **Application Load Balancer** | Routes API requests |
+| **Amazon ECS Fargate** | Hosts backend microservices |
+| **Amazon ECR** | Stores Docker container images |
+| **Amazon RDS (MySQL)** | Application Database |
+| **Amazon SQS** | Asynchronous communication between services |
+| **Amazon S3** | Hosts React Frontend |
+| **Amazon CloudFront** | Global CDN |
+| **Amazon Route53** | Domain & DNS Management |
+| **AWS Certificate Manager** | HTTPS SSL Certificates |
+| **Security Groups** | Firewall Rules |
+| **IAM** | Secure Access Control |
 
-- Containerized microservices using Docker
-- Automated CI/CD with Jenkins
-- Image management using Amazon ECR
-- Secure networking with Amazon VPC
-- Public & Private Subnets
-- Application Load Balancer
-- Amazon RDS MySQL
-- Amazon SQS asynchronous messaging
-- HTTPS using AWS Certificate Manager
-- Frontend hosting using Amazon S3
-- Global content delivery using CloudFront
-- DNS management using Route 53
+---
+
+
+LUCCI follows a fully automated CI/CD pipeline.
+
+```
+Developer
+     │
+ Git Push
+     ▼
+GitHub Repository
+     │
+Webhook
+     ▼
+Jenkins Pipeline
+     │
+Checkout Source Code
+     │
+Build Docker Images
+     │
+Push Images
+     ▼
+Amazon ECR
+     │
+Deploy Latest Images
+     ▼
+Amazon ECS Fargate
+     │
+Rolling Deployment
+     ▼
+Application Load Balancer
+     │
+Production Environment
+```
+
+---
+
+## ⚙️ Jenkins Pipeline Stages
+
+| Stage | Purpose |
+|--------|---------|
+| Checkout Source | Clone Repository |
+| Docker Build | Build Microservice Images |
+| Push to ECR | Upload Images |
+| ECS Deployment | Deploy Latest Containers |
+| Verify Deployment | Health Checks |
+
+---
+
+
+
+# 📁 Frontend Repository Structure
+
+| Folder / File | Description |
+|---------------|-------------|
+| `assets/` | Architecture diagram and application screenshots used in the documentation |
+| `components/` | Reusable HTML components (Navbar, etc.) |
+| `public/` | Static frontend assets |
+| `src/` | JavaScript logic for frontend features |
+| `index.html` | Landing page |
+| `products.html` | Product listing page |
+| `product-details.html` | Product details page |
+| `collections.html` | Product collections |
+| `cart.html` | Shopping cart |
+| `checkout.html` | Checkout workflow |
+| `orders.html` | User order history |
+| `order-details.html` | Individual order details |
+| `order-success.html` | Successful order confirmation |
+| `wishlist.html` | Wishlist management |
+| `profile.html` | User profile |
+| `admin.html` | Admin dashboard |
+| `style.css` | Global styling |
+| `build.sh` | Frontend build script |
+| `Jenkinsfile` | CI/CD pipeline |
+| `package.json` | Project dependencies |
+
+
+# Deployment 
+
+Developer
+      │
+Git Push
+      ▼
+GitHub Repository
+      │
+Webhook
+      ▼
+Jenkins
+      │
+Build Frontend
+      │
+Deploy Static Files
+      ▼
+Amazon S3
+      │
+CloudFront
+      │
+Route 53
+      ▼
+Users
+
+----
+# 📸 Application Screenshots
+
+## 🏠 Home Page
+
+<p align="center">
+  <img src="assets/HomePage.png" alt="Home Page" width="90%">
+</p>
+
+---
+
+## 🛍️ Collections
+
+<p align="center">
+  <img src="assets/Collections.png" alt="Collections" width="90%">
+</p>
+
+---
+
+## 👗 Women's Collection
+
+<p align="center">
+  <img src="assets/Womens.png" alt="Women's Collection" width="90%">
+</p>
+
+---
+
+## 📦 Products
+
+<p align="center">
+  <img src="assets/Products.png" alt="Products" width="90%">
+</p>
+
+---
+
+## 🛒 Checkout
+
+<p align="center">
+  <img src="assets/CheckoutPage.png" alt="Checkout Page" width="90%">
+</p>
+
+---
+
+## 💳 Payment Process
+
+<p align="center">
+  <img src="assets/PaymentProcess.png" alt="Payment Process" width="90%">
+</p>
+
+---
+
+## ✅ Payment Successful
+
+<p align="center">
+  <img src="assets/PaymentSuccessfull.png" alt="Payment Successful" width="90%">
+</p>
 
 ----
 
-# 📦 Project Repositories
 
-| Repository | Description |
-|------------|-------------|
-| **https://github.com/rozanaim2026/frontend-aws-devops.git** | React Application |
-| **https://github.com/rozanaim2026/user-service.git** | User Authentication & Profile |
-| **https://github.com/rozanaim2026/product-service.git** | Product Catalog |
-| **https://github.com/rozanaim2026/order-service.git** | Order Management |
-| **https://github.com/rozanaim2026/payment-service.git** | Razorpay Integration |
+# 🚀 Deployment
+
+## Clone Repository
+
+```bash
+git clone https://github.com/rozanaim2026/frontend-aws-devops.git
+
+cd frontend-aws-devops
+```
+
+---
+
+# 📈 Future Improvements
+
+- Kubernetes (Amazon EKS)
+- Terraform Infrastructure as Code
+- CloudWatch Monitoring
+- AWS Secrets Manager
+- Auto Scaling
+- Multi-AZ Deployment
+- Blue/Green Deployment
+- API Gateway
+- AWS WAF
+- Redis Caching
+- Elasticsearch
+- Amazon ElastiCache
+- AWS CodePipeline
+
+---
+
+# 👩‍💻 Author
+
+<div align="center">
+
+## Rozana IM
+
+Cloud Engineer • DevOps Engineer • AWS Enthusiast
+
+GitHub: https://github.com/rozana09
+
+LinkedIn: https://linkedin.com/in/<your-profile>
+
+</div>
+
+---
+
+# ⭐ Support
+
+If you found this project helpful,
+
+please consider giving it a ⭐ on GitHub.
+
+It really helps and motivates me to build more cloud-native projects.
+
+---
+
+<div align="center">
 
 
+## ☁️ Built with AWS • Docker • Jenkins • React • Node.js
 
+### ❤️ Made with passion for Cloud & DevOps Engineering
+
+</div>
