@@ -56,7 +56,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <div class="hero-bottom">
 
-<p class="hero-tagline">
+<p class="hero-tagline" id="heroTagline">
 Discover timeless fashion designed to inspire confidence
 </p>
 
@@ -122,6 +122,25 @@ and timeless taste.
 <!-- PAGE FUNCTIONS -->
 
 <script>
+
+/* ================= ROTATING HERO TAGLINE ================= */
+const heroTaglines = [
+  "Discover timeless fashion designed to inspire confidence",
+  "Where classic style meets modern edge",
+  "Elevate your everyday wardrobe",
+  "Fashion that speaks before you do",
+  "Crafted for those who dare to stand out",
+  "Timeless pieces, made for every story"
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+  const taglineEl = document.getElementById("heroTagline");
+  if (taglineEl) {
+    const randomIndex = Math.floor(Math.random() * heroTaglines.length);
+    taglineEl.innerText = heroTaglines[randomIndex];
+  }
+});
+
 
 function openMenu(){
 document.getElementById("sideMenu").classList.toggle("open")
