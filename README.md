@@ -363,6 +363,7 @@ http://localhost:3000
 
 <a id="author"></a>
 # 👩‍💻 Author
+<div align="center">
 
 <p align="center">
 
