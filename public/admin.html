@@ -199,7 +199,7 @@ async function safeFetch(url, options = {}) {
 async function loadUsers() {
 
   // 🔥 FIXED (try both if needed)
-  const data = await safeFetch(`${API}/users/all`);
+  const data = await safeFetch(`${USER_API}/users/all`);
 
   if (!data) {
     responseBox.innerHTML = "❌ Failed to load users";
@@ -213,7 +213,7 @@ async function loadUsers() {
 
 async function loadOrders() {
 
-  const data = await safeFetch(`${API}/orders/admin/all`);
+  const data = await safeFetch(`${ORDER_API}/orders/admin/all`);
 
   if (!data) {
     responseBox.innerHTML = "❌ Failed to load orders";
@@ -230,7 +230,7 @@ async function updateOrder(){
   const id = document.getElementById("orderId").value;
   const status = document.getElementById("orderStatus").value;
 
-  const res = await safeFetch(`${API}/orders/update-status`, {
+  const res = await safeFetch(`${ORDER_API}/orders/update-status`, {
     method:"PUT",
     body: JSON.stringify({
       orderId:id,
@@ -281,10 +281,10 @@ async function addProduct(){
 async function loadHealth(){
 
   const services = [
-    { name:"User Service", url:`${API}/health` },
-    { name:"Order Service", url:`${API}/orders/health` },
+    { name:"User Service", url:`${USER_API}/health` },
+    { name:"Order Service", url:`${ORDER_API}/orders/health` },
     { name:"Product Service", url:`${PRODUCT_API}/products/health` },
-    { name:"Payment Service", url:`${API}/payments/health` }
+    { name:"Payment Service", url:`${PAYMENT_API}/health` }
   ];
 
   let html = "<h3>Service Health</h3>";
