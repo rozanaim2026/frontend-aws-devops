@@ -1,21 +1,22 @@
 <div align="center">
 
-# 🛍️ LUCCI — Cloud Native E-Commerce Platform
+# 🛍️ LUCCI Frontend
 
-### **A production-grade microservices-based e-commerce platform deployed on AWS using modern DevOps practices**
-
+### Frontend Application for the LUCCI Cloud Native E-Commerce Platform
 <br/>
 
+<div align="center">
+
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![AWS](https://img.shields.io/badge/Cloud-AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/)
-[![Docker](https://img.shields.io/badge/Container-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Jenkins](https://img.shields.io/badge/CI%2FCD-Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white)](https://www.jenkins.io/)
-[![Amazon ECS](https://img.shields.io/badge/Compute-ECS_Fargate-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/ecs/)
-[![Amazon ECR](https://img.shields.io/badge/Registry-Amazon_ECR-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/ecr/)
-[![Amazon RDS](https://img.shields.io/badge/Database-Amazon_RDS-527FFF?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/rds/)
 [![Amazon S3](https://img.shields.io/badge/Storage-Amazon_S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white)](https://aws.amazon.com/s3/)
 [![CloudFront](https://img.shields.io/badge/CDN-CloudFront-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/cloudfront/)
 [![Route53](https://img.shields.io/badge/DNS-Route_53-8C4FFF?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/route53/)
-[![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+
+</div>
 
 <br/>
 
@@ -28,44 +29,19 @@
 
 ----
 
-<div align="center">
-
-# 🛍️ LUCCI Frontend
+# 🔍 Overview
 
 This repository contains the frontend application for the LUCCI Cloud Native E-Commerce Platform.
 
-The complete project consists of five independently deployed repositories:
+It provides the customer-facing web interface while communicating with backend microservices through REST APIs.
+
+The complete LUCCI platform consists of:
 
 - Frontend
 - User Service
 - Product Service
 - Order Service
 - Payment Service
-
-  ----
-</div>
-  
-# 🔍 Overview
-
-LUCCI is a **production-style cloud-native e-commerce platform** designed using a **microservices architecture** and deployed entirely on **Amazon Web Services (AWS)**.
-
-Instead of deploying a single monolithic application, LUCCI separates business functionality into multiple independent services that communicate securely while running inside **Amazon ECS Fargate**.
-
-The project demonstrates real-world cloud engineering concepts including:
-
-- Containerized microservices using Docker
-- Automated CI/CD with Jenkins
-- Image management using Amazon ECR
-- Secure networking with Amazon VPC
-- Public & Private Subnets
-- Application Load Balancer
-- Amazon RDS MySQL
-- Amazon SQS asynchronous messaging
-- HTTPS using AWS Certificate Manager
-- Frontend hosting using Amazon S3
-- Global content delivery using CloudFront
-- DNS management using Route 53
-
 ----
 
 # 📦 Project Repositories
@@ -95,54 +71,30 @@ The project demonstrates real-world cloud engineering concepts including:
 
 ```
 Developer
-    │
-Git Push
-    ▼
+      │
 GitHub
-    │
+      │
 Webhook
-    ▼
-Jenkins (EC2)
-    │
-Build Docker Image
-    ▼
-Amazon ECR
-    │
-Deploy Latest Image
-    ▼
-Amazon ECS Fargate
-    │
-Application Load Balancer
-    │
-────────────────────────────────────────
-User Service
-Product Service
-Order Service
-Payment Service
-    │
-Amazon RDS MySQL
-
-Payment Service
+      ▼
+Jenkins
       │
-Amazon SQS
+Build Frontend
       │
-Order Service
-
-────────────────────────────────────────
-
-User
- │
-Route53
- │
-CloudFront
- │
+Deploy Static Files
+      ▼
 Amazon S3
- │
-React Frontend
- │
-API Calls
- │
+      │
+CloudFront
+      │
+Route53
+      │
+Users
+      │
+REST API
+      ▼
 Application Load Balancer
+      │
+Backend Microservices
 ```
 
 ---
@@ -172,12 +124,7 @@ Application Load Balancer
 - Product Browsing
 - Category Filtering
 - Shopping Cart
-- Secure Checkout
-- Razorpay Payment Integration
-- Order Management
-- User Authentication
 - Cloud-native Deployment
-- Dockerized Microservices
 
 ----
 # 🛠️ Tech Stack
@@ -185,18 +132,11 @@ Application Load Balancer
 | Category | Technology | Purpose |
 |-----------|------------|---------|
 | **Frontend** | React.js | User Interface |
-| **Backend** | Node.js + Express.js | REST APIs |
-| **Database** | MySQL | Persistent Storage |
-| **Containerization** | Docker | Package Microservices |
-| **Container Registry** | Amazon ECR | Store Docker Images |
-| **Container Orchestration** | Amazon ECS Fargate | Run Containers |
 | **CI/CD** | Jenkins | Automated Build & Deployment |
 | **Cloud Storage** | Amazon S3 | React Frontend Hosting |
 | **Content Delivery** | Amazon CloudFront | CDN |
 | **DNS** | Amazon Route 53 | Domain Management |
 | **SSL** | AWS Certificate Manager | HTTPS Certificates |
-| **Messaging** | Amazon SQS | Event-driven Communication |
-| **Payments** | Razorpay | Payment Gateway |
 | **Version Control** | Git & GitHub | Source Code Management |
 
 ---
@@ -207,16 +147,6 @@ The application is deployed using a secure AWS architecture that separates publi
 
 | AWS Service | Purpose |
 |--------------|---------|
-| **Amazon VPC** | Isolated network for the application |
-| **Public Subnet** | Hosts the Application Load Balancer |
-| **Private Subnet** | Hosts ECS Fargate Tasks & Amazon RDS |
-| **Internet Gateway** | Allows public internet access |
-| **NAT Gateway** | Outbound internet for private resources |
-| **Application Load Balancer** | Routes API requests |
-| **Amazon ECS Fargate** | Hosts backend microservices |
-| **Amazon ECR** | Stores Docker container images |
-| **Amazon RDS (MySQL)** | Application Database |
-| **Amazon SQS** | Asynchronous communication between services |
 | **Amazon S3** | Hosts React Frontend |
 | **Amazon CloudFront** | Global CDN |
 | **Amazon Route53** | Domain & DNS Management |
@@ -242,19 +172,11 @@ Jenkins Pipeline
      │
 Checkout Source Code
      │
-Build Docker Images
-     │
 Push Images
      ▼
-Amazon ECR
-     │
-Deploy Latest Images
-     ▼
-Amazon ECS Fargate
      │
 Rolling Deployment
      ▼
-Application Load Balancer
      │
 Production Environment
 ```
@@ -324,6 +246,10 @@ CloudFront
 Route 53
       ▼
 Users
+      │
+REST API Calls
+      ▼
+Application Load Balancer
 
 ----
 # 📸 Application Screenshots
@@ -399,19 +325,15 @@ cd frontend-aws-devops
 
 # 📈 Future Improvements
 
-- Kubernetes (Amazon EKS)
-- Terraform Infrastructure as Code
-- CloudWatch Monitoring
-- AWS Secrets Manager
-- Auto Scaling
-- Multi-AZ Deployment
-- Blue/Green Deployment
-- API Gateway
-- AWS WAF
-- Redis Caching
-- Elasticsearch
-- Amazon ElastiCache
-- AWS CodePipeline
+- Progressive Web App (PWA)
+- Responsive Design Enhancements
+- Dark Mode
+- Accessibility Improvements (WCAG)
+- Image Optimization
+- Lazy Loading
+- Frontend Unit Testing
+- Performance Optimization
+
 
 ---
 
