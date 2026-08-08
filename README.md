@@ -35,3 +35,13 @@
 </div>
 
 ---
+
+# 📦 Project Repositories
+
+| Repository | Description |
+|------------|-------------|
+| **https://github.com/rozanaim2026/frontend-aws-devops.git** | React Application |
+| **https://github.com/rozanaim2026/user-service.git** | User Authentication & Profile |
+| **https://github.com/rozanaim2026/product-service.git** | Product Catalog |
+| **https://github.com/rozanaim2026/order-service.git** | Order Management |
+| **https://github.com/rozanaim2026/payment-service.git** | Razorpay Integration |
