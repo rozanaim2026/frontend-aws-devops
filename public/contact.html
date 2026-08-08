@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>LUCCI - Contact Us</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+.contact-section{
+  padding:120px 180px;
+  background:#f8f8f8;
+}
+.contact-container{
+  max-width:600px;
+  margin:auto;
+}
+.contact-container h2{
+  font-family:'Playfair Display',serif;
+  font-size:36px;
+  margin-bottom:15px;
+}
+.contact-container p.intro{
+  font-size:16px;
+  line-height:1.8;
+  color:#444;
+  margin-bottom:35px;
+}
+.contact-form label{
+  display:block;
+  font-size:14px;
+  margin-bottom:6px;
+  color:#333;
+}
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:20px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  font-family:'Poppins',sans-serif;
+  font-size:15px;
+}
+.contact-form textarea{
+  min-height:140px;
+  resize:vertical;
+}
+.contact-form button{
+  padding:14px 32px;
+  background:#1e2a38;
+  color:white;
+  border:none;
+  border-radius:6px;
+  font-size:15px;
+  cursor:pointer;
+  transition:.2s;
+}
+.contact-form button:hover{
+  background:#2c3e50;
+}
+.contact-info{
+  margin-top:40px;
+  font-size:15px;
+  color:#444;
+  line-height:2;
+}
+@media (max-width:768px){
+  .contact-section{ padding:60px 24px; }
+}
+</style>
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<section class="contact-section">
+  <div class="contact-container">
+
+    <h2>Get In Touch</h2>
+    <p class="intro">
+      Have a question about an order, a product, or just want to say hello?
+      We'd love to hear from you.
+    </p>
+
+    <form class="contact-form" id="contactForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <p><i class="fa-solid fa-envelope"></i>&nbsp; support@lucci.com</p>
+      <p><i class="fa-solid fa-phone"></i>&nbsp; +91 98765 43210</p>
+      <p><i class="fa-solid fa-location-dot"></i>&nbsp; Bengaluru, India</p>
+    </div>
+
+  </div>
+</section>
+
+<script src="config.js"></script>
+<script src="/src/navbar.js"></script>
+<script src="/src/app.js"></script>
+
+<script>
+fetch("components/navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+    if(typeof initNavbar === "function"){
+      initNavbar();
+    }
+  });
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("Thanks for reaching out! We'll get back to you soon.");
+  this.reset();
+});
+</script>
+
+</body>
+</html>
