@@ -1,6 +1,8 @@
 <div align="center">
 
 # 🛍️ LUCCI Frontend
+### 🔗 [Live Demo](https://frontend-aws-devops-1.vercel.app)
+</div>
 
 ----
 ### Frontend Application for the LUCCI Cloud Native E-Commerce Platform
