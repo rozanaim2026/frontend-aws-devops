@@ -22,6 +22,13 @@
 > Deployed as a static site on **Vercel** (free tier), pushed directly from the CLI
 >
 > Communicates with backend microservices — each hosted independently on **Render**
+
+<br/>
+
+### 🔗 [Live Demo](https://frontend-aws-devops-1.vercel.app)
+
+> ⚠️ Backend services run on Render's free tier and may take 20-30 seconds to respond on first load after a period of inactivity (cold start).
+
 </div>
 
 ----
@@ -92,7 +99,7 @@ The frontend application is responsible for:
 | Repository | Description |
 |------------|-------------|
 | **[Frontend](https://github.com/rozanaim2026/frontend-aws-devops)** *(Current Repository)* | Customer-facing web application |
-| **[User Service](https://github.com/rozanaim2026/user-service.git)** | Authentication & User Management |
+| **[User Service](https://github.com/rozanaim2026/user-service)** | Authentication & User Management |
 | **[Product Service](https://github.com/rozanaim2026/product-service)** | Product Catalog |
 | **[Order Service](https://github.com/rozanaim2026/order-service)** | Order Processing |
 | **[Payment Service](https://github.com/rozanaim2026/payment-service)** | Razorpay Integration |
@@ -100,8 +107,7 @@ The frontend application is responsible for:
 ----
 
 <a id="architecture"></a>
-# 🏗️ Architecture
-
+# Architecture
 ### Architecture Flow
 
 ```
@@ -152,8 +158,7 @@ Aiven PostgreSQL (shared database instance)
 ----
 
 <a id="tech-stack"></a>
-# 🛠️ Tech Stack
-
+# Tech Stack
 | Category | Technology | Purpose |
 |-----------|------------|---------|
 | Frontend | HTML5 | Structure |
@@ -247,8 +252,7 @@ vercel --prod
 ----
 
 <a id="environment-configuration"></a>
-# ⚙️ Environment Configuration
-
+# Environment Configuration
 Since this is a static site, there is no `.env` file — service URLs are defined directly in `public/config.js`:
 
 ```js
@@ -273,7 +277,7 @@ const PAYMENT_API = "https://payment-service-x7m0.onrender.com";
 ----
 
 <a id="author"></a>
-# 👩‍💻 Author
+# Author
 <div align="center">
 
 ## Rozana IM
